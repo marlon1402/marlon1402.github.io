@@ -1,0 +1,13 @@
+:root {
+  --bg-main: #0f0f14;
+  --bg-secondary: #181825;
+
+  --purple-main: #7c3aed;
+  --purple-soft: #a78bfa;
+
+  --text-main: #ededed;
+  --text-secondary: #b5b5c3;
+
+  --radius: 999px;
+  --transition: 0.25s ease;
+}
