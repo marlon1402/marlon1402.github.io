@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/pages/home.css" />
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="1ac6eaee-8a1a-48ba-b2e2-99d903032dd6"></script>
 </head>
 
 <body>
     <header class="header">
-        <a href="/">&lt;/Marlon&gt;</a>
-        <a href="/links" class="header-link">Links &gt;</a>
+        <a href="/" data-umami-event="nav-home">&lt;/Marlon&gt;</a>
+        <a href="/links" class="header-link" data-umami-event="nav-links">Links &gt;</a>
     </header>
 
     <main class="home">
@@ -34,20 +35,20 @@
         </section>
 
         <section class="actions">
-            <a href="/projetos/index.html" class="btn primary">
+            <a href="/projetos/index.html" class="btn primary" data-umami-event="btn-projetos">
                 Ver Projetos
             </a>
-            <a href="/sobre/index.html" class="btn primary">
+            <a href="/sobre/index.html" class="btn primary" data-umami-event="btn-sobre">
                 Sobre
             </a>
         </section>
 
         <section class="social">
-            <a href="https://github.com/marlon1402" target="_blank" aria-label="Github"><i
+            <a href="https://github.com/marlon1402" target="_blank" aria-label="Github" data-umami-event="social-github"><i
                     class="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/marlonsamuel1402/" target="_blank" aria-label="Linkedin"><i
+            <a href="https://www.linkedin.com/in/marlonsamuel1402/" target="_blank" aria-label="Linkedin" data-umami-event="social-linkedin"><i
                     class="fa-brands fa-linkedin"></i></a>
-            <a href="mailto:marlonsamuel9333@email.com" target="_blank" aria-label="Email"><i
+            <a href="mailto:marlonsamuel9333@email.com" target="_blank" aria-label="Email" data-umami-event="social-email"><i
                     class="fa-solid fa-envelope"></i></a>
         </section>
     </main>
