@@ -1,0 +1,201 @@
+/* OVERLAY */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* MODAL */
+
+.modal {
+    background: #0f0f14;
+    border: 1px solid rgba(124, 58, 237, 0.5);
+    border-radius: 28px;
+    width: 90%;
+    max-width: 520px;
+    padding: 32px;
+    position: relative;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-overlay.active .modal {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* FECHAR */
+
+.modal-close {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: var(--purple-main);
+}
+
+/* CONTEÚDO */
+
+.modal-title {
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+}
+
+.modal-body p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+}
+
+.modal-body p:last-child {
+    margin-bottom: 0;
+}
+
+.modal-body p strong {
+    color: var(--text-primary);
+}
+
+.modal-body .highlight {
+    color: var(--purple-main);
+    font-weight: 500;
+}
+
+.modal-techs {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.modal-techs li {
+    list-style: none;
+    font-size: 1.6rem;
+    color: var(--text-secondary);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.modal-techs li:hover {
+    transform: translateY(-4px);
+    color: var(--purple-main);
+}
+
+/* ANIMAÇÕES DO MODAL */
+
+.modal-body p {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeUp 0.4s ease forwards;
+}
+
+.modal-body p:nth-child(2) { animation-delay: 0.05s; }
+.modal-body p:nth-child(3) { animation-delay: 0.1s; }
+.modal-body p:nth-child(4) { animation-delay: 0.15s; }
+.modal-body p:nth-child(5) { animation-delay: 0.2s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ANIMAÇÃO DOS ICONES */
+
+.modal-techs li {
+    opacity: 0;
+    animation: scaleIn 0.35s ease forwards;
+}
+
+.modal-techs li:nth-child(1) { animation-delay: 0.05s; }
+.modal-techs li:nth-child(2) { animation-delay: 0.1s; }
+.modal-techs li:nth-child(3) { animation-delay: 0.15s; }
+.modal-techs li:nth-child(4) { animation-delay: 0.2s; }
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.tech-icons {
+    display: flex;
+    gap: 16px;
+    margin: 16px 0 8px;
+}
+
+.tech-icons i {
+    font-size: 1.8rem;
+    color: var(--text-secondary);
+    position: relative;
+    cursor: default;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* HOVER NO ÍCONE */
+.tech-icons i:hover {
+    color: var(--purple-main);
+    transform: translateY(-2px);
+}
+
+/* TOOLTIP */
+.tech-icons i::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -36px;
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background: rgba(15, 15, 20, 0.95);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 6px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    border: 1px solid rgba(124, 58, 237, 0.4);
+}
+
+/* MOSTRAR TOOLTIP */
+.tech-icons i:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+    .tech-icons i::after {
+        display: none;
+    }
+}
