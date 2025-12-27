@@ -1,0 +1,33 @@
+{
+    "nextmind": {
+        "title": "NEXTMIND",
+        "techs": [
+            "flutter",
+            "firebase",
+            "laravel",
+            "php",
+            "mysql",
+            "react"
+        ],
+        "content": [
+            "O <strong>NextMind</strong> é um projeto multiplataforma (Web, Mobile e Desktop) desenvolvido como Projeto Integrador no COTIL.",
+            "A ideia surgiu após a pandemia, ao identificar a deficiência das instituições de ensino em relação à saúde mental dos alunos.",
+            "O sistema oferece um ambiente de acolhimento, escuta e apoio, utilizando tecnologias modernas para garantir escalabilidade.",
+            "<span class=\"highlight\">🏆 Projeto vencedor da IV FECITEC — Feira de Tecnologia do COTIL.</span>"
+        ]
+    },
+    "housecoffee": {
+        "title": "House Coffee",
+        "techs": [
+            "html5",
+            "css3",
+            "javascript"
+        ],
+        "content": [
+            "O <strong>House Coffee</strong> é um projeto front-end desenvolvido com foco exclusivo em design e experiência do usuário.",
+            "A proposta foi criar a identidade visual de uma cafeteria fictícia, explorando cores, tipografia e organização de layout.",
+            "Todo o projeto foi construído utilizando <strong>HTML</strong>, <strong>CSS</strong> e <strong>JavaScript</strong>, sem qualquer integração com backend.",
+            "O objetivo principal foi aprimorar habilidades de desenvolvimento front-end, responsividade e atenção aos detalhes visuais."
+        ]
+    }
+}
