@@ -1,11 +1,149 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marlon Samuel - Projects</title>
+    <link rel="icon" href="assets/images/favicon/favicon.ico" sizes="any">
+    <link rel="icon" href="/assets/images/favicon/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/assets/images/favicon/apple-touch-icon.png">
+    <link rel="stylesheet" sizes="96x96" href="/assets/images/favicon/favicon-96x96.png">
+    <link rel="stylesheet" sizes="192x192" href="/assets/images/favicon/web-app-manifest-192x192.png">
+    <link rel="stylesheet" sizes="512x512" href="/assets/images/favicon/web-app-manifest-512x512.png">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/projects.css">
+    <link rel="stylesheet" href="/css/components/modal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
+
 <body>
-    
+    <header class="header">
+        <a href="/">&lt;/Marlon&gt;</a>
+        <a href="/links/index.html">Links &gt;</a>
+    </header>
+
+    <main class="projects-page">
+        <section class="projects-hero">
+            <h1>Projects</h1>
+        </section>
+
+        <section class="projects-list">
+            <article class="project-card featured fade-in">
+                <div class="project-image">
+                    <img src="/assets/images/projects/nextmind.jpeg" alt="Projeto Next Mind">
+                </div>
+
+                <div class="project-content">
+                    <ul class="project-tags">
+                        <li>Flutter</li>
+                        <li>Firebase</li>
+                        <li>Laravel</li>
+                        <li>MySQL</li>
+                    </ul>
+
+                    <h2 class="project-title">NEXTMIND</h2>
+
+                    <p class="project-description">
+                        Projeto multiplataforma focado em saúde mental no ambiente acadêmico pós-pandemia.
+                        Vencedor da IV FECITEC – COTIL.
+                    </p>
+
+                    <div class="project-actions">
+                        <button class="project-button outline" data-project="nextmind">
+                            Saiba Mais
+                        </button>
+
+                        <a href="https://github.com/Next-Mind" target="_blank" class="project-button">
+                            Ver projeto
+                        </a>
+                    </div>
+
+                </div>
+            </article>
+
+            <article class="project-card fade-in">
+
+                <div class="project-image">
+                    <img src="/assets/images/projects/house-coffee.jpeg" alt="Projeto exemplo">
+                </div>
+
+                <div class="project-content">
+
+                    <ul class="project-tags">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+
+                    <h2 class="project-title">Nome do Projeto</h2>
+
+                    <p class="project-description">
+                        Projeto front-end focado em design e experiência visual, desenvolvido para uma cafeteria
+                        fictícia.
+                    </p>
+
+                    <div class="project-actions">
+                        <button class="project-button outline" data-project="housecoffee">
+                            Saiba mais
+                        </button>
+
+                        <a href="https://github.com/marlon1402/House_Coffee" target="_blank" class="project-button primary">
+                            Ver projeto
+                        </a>
+                    </div>
+
+                </div>
+            </article>
+        </section>
+
+        <div class="section-divider">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <section class="projects-construction fade-in">
+
+            <img src="/assets/images/construct.png" alt="Ilustração de projetos em desenvolvimento"
+                class="construction-image">
+
+            <p class="construction-text">
+                <strong>Novos projetos estão em desenvolvimento.</strong><br>
+                Gosto de explorar ideias com calma, estudar novas tecnologias e construir soluções com propósito.
+                Em breve, mais projetos farão parte deste espaço.
+            </p>
+
+        </section>
+    </main>
 </body>
+
+<!-- MODAL DINÂMICO -->
+<div class="modal-overlay" id="project-modal" aria-hidden="true">
+
+    <div class="modal">
+
+        <button class="modal-close" aria-label="Fechar modal">
+            &times;
+        </button>
+
+        <div class="modal-content">
+
+            <h2 class="modal-title" id="modal-title"></h2>
+
+            <div class="modal-body" id="modal-body">
+                <!-- conteúdo injetado via JS -->
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script src="/js/modal.js" defer></script>
+<script src="/js/scroll-animations.js"></script>
+
 </html>
