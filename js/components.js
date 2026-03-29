@@ -8,19 +8,23 @@ async function loadComponent(selector, path) {
     el.innerHTML = html;
 }
 
+async function waitForTranslations() {
+    while (!window.translations || Object.keys(window.translations).length === 0) {
+        await new Promise(r => setTimeout(r, 50));
+    }
+}
+
 async function loadComponents() {
     await loadComponent('#header', '/components/header.html');
 
-    // 🔥 Reaplica traduções depois que o DOM mudou
-    if (window.applyLang && window.translations) {
-        const lang = localStorage.getItem('lang') || 'PT';
-        window.applyLang(lang);
-    }
+    // 🔥 espera o JSON carregar
+    await waitForTranslations();
 
-    // 🔥 Rebind dos eventos (dropdown)
-    if (window.initLanguage) {
-        window.initLanguage();
-    }
+    const lang = localStorage.getItem('lang') || 'PT';
+
+    if (window.applyLang) window.applyLang(lang);
+    if (window.bindDropdownEvents) window.bindDropdownEvents();
+    if (window.bindThemeEvents) window.bindThemeEvents();   
 }
 
 loadComponents();

@@ -1,5 +1,4 @@
 const langWrapper = document.getElementById('langWrapper');
-const langBtn = document.getElementById('langBtn');
 const langDropdown = document.getElementById('langDropdown');
 const activeLangFlag = document.getElementById('activeLangFlag');
 const activeLangCode = document.getElementById('activeLangCode');
@@ -11,6 +10,9 @@ async function loadTranslations() {
     try {
         const response = await fetch('/assets/data/translation.json');
         translations = await response.json();
+
+        // 🔥 CORREÇÃO CRÍTICA
+        window.translations = translations;
 
         initLanguage();
     } catch (error) {
@@ -118,11 +120,11 @@ window.addEventListener('pageshow', (event) => {
         applyLang(lang);
     }
 });
-
 // 🔹 START
 loadTranslations();
 
 // 🔹 EXPOR GLOBAL (para components.js)
 window.applyLang = applyLang;
 window.initLanguage = initLanguage;
+window.bindDropdownEvents = bindDropdownEvents;
 window.translations = translations;
