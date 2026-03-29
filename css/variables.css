@@ -8,6 +8,19 @@
   --text-main: #ededed;
   --text-secondary: #b5b5c3;
 
+  --dot-color: rgba(255, 255, 255, 0.1);
+
   --radius: 999px;
   --transition: 0.25s ease;
+}
+
+/* 🔥 LIGHT MODE */
+[data-theme="light"] {
+  --bg-main: #ffffff;
+  --bg-secondary: #f5f5f5;
+
+  --text-main: #111111;
+  --text-secondary: #555555;
+
+  --dot-color: rgba(0, 0, 0, 0.1);
 }

@@ -8,23 +8,70 @@ async function loadComponent(selector, path) {
     el.innerHTML = html;
 }
 
-async function waitForTranslations() {
-    while (!window.translations || Object.keys(window.translations).length === 0) {
-        await new Promise(r => setTimeout(r, 50));
-    }
-}
-
 async function loadComponents() {
     await loadComponent('#header', '/components/header.html');
 
-    // 🔥 espera o JSON carregar
-    await waitForTranslations();
-
-    const lang = localStorage.getItem('lang') || 'PT';
-
-    if (window.applyLang) window.applyLang(lang);
-    if (window.bindDropdownEvents) window.bindDropdownEvents();
-    if (window.bindThemeEvents) window.bindThemeEvents();   
+    // 🔥 inicializa TUDO depois que o header existe
+    initAfterComponents();
 }
 
+function initAfterComponents() {
+    // 🔥 idioma
+    if (window.applyLang && window.translations) {
+        const lang = localStorage.getItem('lang') || 'PT';
+        window.applyLang(lang);
+    }
+
+    if (window.initLanguage) {
+        window.initLanguage();
+    }
+
+    // 🔥 tema
+    if (window.initTheme) {
+        window.initTheme();
+    }
+
+    // 🔥 menu mobile
+    initMobileMenu();
+}
+
+/* ========================= */
+/* 📱 MENU MOBILE */
+/* ========================= */
+function initMobileMenu() {
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('headerControls');
+
+    if (!toggle || !menu) return;
+
+    // evitar duplicação de eventos
+    toggle.replaceWith(toggle.cloneNode(true));
+    const newToggle = document.getElementById('menuToggle');
+
+    newToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+
+        menu.classList.toggle('open');
+        document.body.classList.toggle('menu-open');
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!menu.contains(e.target) && !newToggle.contains(e.target)) {
+            menu.classList.remove('open');
+            document.body.classList.remove('menu-open');
+        }
+    });
+
+    // fechar ao clicar em link
+    menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('open');
+            document.body.classList.remove('menu-open');
+        });
+    });
+}
+
+/* ========================= */
+/* 🚀 START */
+/* ========================= */
 loadComponents();

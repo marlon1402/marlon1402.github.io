@@ -219,3 +219,160 @@
 
     text-align: center;
 }
+
+/* ===== SWITCH BASE ===== */
+.theme-switch {
+    width: 52px;
+    height: 28px;
+    background: var(--bg-secondary);
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    display: flex;
+    align-items: center;
+    padding: 3px;
+
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+}
+
+/* 🔥 ESTADO ATIVO (LIGHT MODE) */
+.theme-switch[aria-checked="true"] {
+    background: var(--purple-main);
+    border-color: transparent;
+}
+
+/* ===== KNOB ===== */
+.switch-knob {
+    width: 22px;
+    height: 22px;
+    background: var(--bg-main);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: var(--transition);
+}
+
+/* 🔥 MOVE PARA DIREITA */
+.theme-switch[aria-checked="true"] .switch-knob {
+    transform: translateX(24px);
+    background: #ffffff;
+}
+
+/* ===== ÍCONE ===== */
+#themeIcon {
+    width: 14px;
+    height: 14px;
+    color: var(--text-main);
+    transition: var(--transition);
+}
+
+/* 🔥 ÍCONE NO MODO LIGHT */
+.theme-switch[aria-checked="true"] #themeIcon {
+    color: var(--purple-main);
+}
+
+.theme-switch {
+    background: var(--bg-secondary);
+}
+
+/* hover bonito */
+.theme-switch:hover {
+    transform: scale(1.05);
+}
+
+/* ===== HAMBURGUER ===== */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.menu-toggle span {
+    width: 24px;
+    height: 2px;
+    background: var(--text-main);
+    transition: var(--transition);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .header-controls {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+
+        background: var(--bg-main);
+        border-left: 1px solid var(--bg-secondary);
+
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        padding: 90px 24px;
+
+        transition: 0.3s ease;
+        z-index: 1000;
+    }
+
+    /* 🔥 aberto */
+    .header-controls.open {
+        right: 0;
+    }
+    
+    /* ===== LINKS ===== */
+    .header-links {
+        font-size: 1.2rem;
+        font-weight: 500;
+
+        padding: 10px 12px;
+        border-radius: 10px;
+
+        transition: var(--transition);
+    }
+
+    .header-links:hover {
+        background: var(--bg-secondary);
+    }
+
+    /* ===== LANG ===== */
+    .lang-wrapper {
+        width: 100%;
+    }
+
+    .lang-btn {
+        width: 100%;
+        justify-content: space-between;
+        padding: 10px 12px;
+        border-radius: 10px;
+        background: var(--bg-secondary);
+    }
+
+    .lang-dropdown {
+        width: 100%;
+    }
+
+    /* ===== THEME ===== */
+    .theme-switch {
+        margin-top: 10px;
+    }
+
+    .header-divider {
+        display: none;
+    }
+}

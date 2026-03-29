@@ -1,12 +1,21 @@
 <header class="header">
-    <a href="/" data-umami-event="nav-home" data-i18n="navHome"></a> 
 
-    <div class="header-controls">
+    <!-- LOGO -->
+    <a href="/" data-umami-event="nav-home" data-i18n="navHome"></a>
+
+    <!-- 🔥 BOTÃO MOBILE -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- CONTROLES -->
+    <div class="header-controls" id="headerControls">
+
         <!-- Idioma -->
         <div class="lang-wrapper" id="langWrapper">
-            <button class="lang-btn" id="langBtn"
-                aria-haspopup="listbox"
-                aria-expanded="false"
+            <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false"
                 data-i18n-attr="aria-label:ariaSelectLanguage">
 
                 <span class="lang-flag" id="activeLangFlag">🇧🇷</span>
@@ -15,35 +24,22 @@
             </button>
 
             <div class="lang-dropdown" id="langDropdown" role="listbox">
-                <button class="lang-option active" data-lang="PT" role="option">
-                    <span>🇧🇷</span> Português
-                </button>
-                <button class="lang-option" data-lang="EN" role="option">
-                    <span>🇺🇸</span> English
-                </button>
+                <button class="lang-option active" data-lang="PT">🇧🇷 Português</button>
+                <button class="lang-option" data-lang="EN">🇺🇸 English</button>
             </div>
         </div>
 
         <!-- Tema -->
-        <button class="theme-switch" id="themeSwitch"
-            aria-checked="false"
-            role="switch"
-            data-i18n-attr="aria-label:ariaToggleTheme">
-
+        <button class="theme-switch" id="themeSwitch" role="switch">
             <span class="switch-knob">
-                <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                </svg>
+                <svg id="themeIcon" viewBox="0 0 24 24"></svg>
             </span>
         </button>
 
         <div class="header-divider"></div>
 
-        <!-- Link -->
-        <a href="/links/"
-            class="header-links"
-            data-umami-event="nav-links"
-            data-i18n="navLinks"></a>
+        <!-- Links -->
+        <a href="/links/" class="header-links" data-i18n="navLinks"></a>
     </div>
+
 </header>
