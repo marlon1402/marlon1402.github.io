@@ -21,10 +21,7 @@
 </head>
 
 <body>
-    <header class="header">
-        <a href="/" data-umami-event="nav-home">&lt;/Marlon&gt;</a>
-        <a href="/links/index.html" data-umami-event="nav-links">Links &gt;</a>
-    </header>
+    <div id="header"></div>
 
     <main class="projects-page">
         <section class="projects-hero">
@@ -47,18 +44,15 @@
 
                     <h2 class="project-title">NEXTMIND</h2>
 
-                    <p class="project-description">
-                        Projeto multiplataforma focado em saúde mental no ambiente acadêmico pós-pandemia.
-                        Vencedor da IV FECITEC – COTIL.
-                    </p>
+                    <p class="project-description" data-i18n="projectNextmindDesc"></p>
 
                     <div class="project-actions">
-                        <button class="project-button outline" data-project="nextmind" data-umami-event="project-nextmind-more">
-                            Saiba Mais
+                        <button class="project-button outline" data-project="nextmind"
+                            data-umami-event="project-nextmind-more" data-i18n="btnMore">
                         </button>
 
-                        <a href="https://github.com/Next-Mind" target="_blank" class="project-button" data-umami-event="project-nextmind">
-                            Ver projeto
+                        <a href="https://github.com/Next-Mind" target="_blank" class="project-button"
+                            data-umami-event="project-nextmind" data-i18n="btnViewProject">
                         </a>
                     </div>
 
@@ -79,20 +73,18 @@
                         <li>JavaScript</li>
                     </ul>
 
-                    <h2 class="project-title">HOUSE COFFEE</h2>
+                    <h2 class="project-title"></h2>
 
-                    <p class="project-description">
-                        Projeto front-end focado em design e experiência visual, desenvolvido para uma cafeteria
-                        fictícia.
-                    </p>
+                    <p class="project-description" data-i18n="projectHouseDesc"></p>
 
                     <div class="project-actions">
-                        <button class="project-button outline" data-project="housecoffee" data-umami-event="project-housecoffee-more">
-                            Saiba mais
+                        <button class="project-button outline" data-project="housecoffee"
+                            data-umami-event="project-housecoffee-more" data-i18n="btnMore">
                         </button>
 
-                        <a href="https://github.com/marlon1402/House_Coffee" target="_blank" class="project-button primary" data-umami-event="project-housecoffee">
-                            Ver projeto
+                        <a href="https://github.com/marlon1402/House_Coffee" target="_blank"
+                            class="project-button primary" data-umami-event="project-housecoffee"
+                            data-i18n="btnViewProject">
                         </a>
                     </div>
 
@@ -142,7 +134,8 @@
     </div>
 
 </div>
-
+<script src="/js/lang.js"></script>
+<script src="/js/components.js"></script>
 <script src="/js/modal.js" defer></script>
 <script src="/js/scroll-animations.js"></script>
 

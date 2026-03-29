@@ -5,17 +5,18 @@ const closeButton = document.querySelector(".modal-close");
 
 let projectData = {};
 
-// CARREGAR JSON
+// 🔹 CARREGAR JSON
 fetch("/assets/data/projects.json")
-    .then(response => response.json())
+    .then(res => res.json())
     .then(data => {
         projectData = data;
+        window.projectData = data; // 🔥 expõe global
     })
     .catch(error => {
         console.error("Erro ao carregar projects.json", error);
     });
 
-// ABRIR MODAL
+// 🔹 ABRIR MODAL
 document.addEventListener("click", (e) => {
     const button = e.target.closest("[data-project]");
     if (!button) return;
@@ -25,12 +26,13 @@ document.addEventListener("click", (e) => {
 
     if (!project) return;
 
+    const lang = localStorage.getItem("lang") || "PT";
+
     modalTitle.textContent = project.title;
     modalBody.innerHTML = "";
 
-
-    /* ===== TECNOLOGIAS (ÍCONES) ===== */
-    if (project.techs && project.techs.length > 0) {
+    /* ===== TECNOLOGIAS ===== */
+    if (project.techs?.length) {
         const techList = document.createElement("ul");
         techList.classList.add("modal-techs");
 
@@ -43,20 +45,21 @@ document.addEventListener("click", (e) => {
         modalBody.appendChild(techList);
     }
 
-    /* ===== TEXTO DO PROJETO ===== */
-    project.content.forEach(text => {
+    /* ===== TEXTO MULTILÍNGUE ===== */
+    const content = project.content[lang] || project.content["PT"];
+
+    content.forEach(text => {
         const p = document.createElement("p");
-        p.innerHTML = text; // permite <strong> e <span class="highlight">
+        p.innerHTML = text;
         modalBody.appendChild(p);
     });
 
     modal.classList.add("active");
     modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
-
 });
 
-// FECHAR MODAL
+// 🔹 FECHAR MODAL
 closeButton.addEventListener("click", closeModal);
 
 modal.addEventListener("click", (e) => {
@@ -72,3 +75,11 @@ function closeModal() {
     modal.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
 }
+
+window.addEventListener("languageChanged", () => {
+    const activeModal = document.querySelector(".modal.active");
+    if (!activeModal) return;
+
+    // fecha e reabre automaticamente (simples e eficiente)
+    closeModal();
+});

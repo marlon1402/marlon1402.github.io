@@ -1,8 +1,8 @@
-.header{
+.header {
     position: fixed;
     top: 0;
     left: 0;
-    
+
     width: 100%;
     padding: 1.5rem 2rem;
 
@@ -19,7 +19,195 @@
     color: var(--purple-soft);
 }
 
-.home{
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.header-divider {
+    width: 1px;
+    height: 14px;
+    background: currentColor;
+    opacity: 0.15;
+    margin: 0 0.2rem;
+}
+
+/* ── Botão de idioma ── */
+.lang-wrapper {
+    position: relative;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 9px;
+    border-radius: var(--radius);
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-family: inherit;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.lang-btn:hover {
+    opacity: 1;
+    border-color: currentColor;
+    background: var(--bg-secondary);
+}
+
+.lang-flag {
+    font-size: 0.85rem;
+    line-height: 1;
+}
+
+.lang-code {
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+}
+
+.lang-chevron {
+    font-size: 0.55rem;
+    opacity: 0.5;
+    transition: transform var(--transition);
+}
+
+.lang-wrapper.open .lang-chevron {
+    transform: rotate(180deg);
+}
+
+/* Dropdown panel */
+.lang-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 140px;
+    background: var(--bg-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 200;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-6px);
+    transition: opacity var(--transition), transform var(--transition);
+}
+
+.lang-wrapper.open .lang-dropdown {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+}
+
+.lang-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 9px 14px;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    background: transparent;
+    color: var(--text-secondary);
+    font-family: inherit;
+    font-size: 0.8rem;
+    opacity: 0.6;
+    cursor: pointer;
+    text-align: left;
+    transition: opacity var(--transition), background var(--transition);
+}
+
+.lang-option:last-child {
+    border-bottom: none;
+}
+
+.lang-option:hover {
+    opacity: 1;
+    background: var(--bg-main);
+}
+
+.lang-option.active {
+    opacity: 1;
+    color: var(--purple-soft);
+}
+
+/* ── Switch de tema ── */
+.theme-switch {
+    position: relative;
+    width: 52px;
+    height: 28px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background var(--transition), border-color var(--transition);
+}
+
+.theme-switch:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.theme-switch.on {
+    background: var(--purple-main);
+    border-color: var(--purple-main);
+}
+
+.theme-switch .switch-knob {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: left var(--transition), background var(--transition);
+}
+
+.theme-switch.on .switch-knob {
+    left: 27px;
+    background: #fff;
+}
+
+.theme-switch .switch-knob svg {
+    width: 11px;
+    height: 11px;
+    color: rgba(255, 255, 255, 0.6);
+    transition: color var(--transition);
+    flex-shrink: 0;
+}
+
+.theme-switch.on .switch-knob svg {
+    color: var(--purple-main);
+}
+
+.header-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    opacity: 0.7;
+    font-size: 0.85rem;
+    transition: opacity 0.2s, color 0.2s;
+}
+
+.header-link i {
+    font-size: 0.75rem;
+}
+
+.header-link:hover {
+    opacity: 1;
+    color: var(--purple-soft);
+}
+
+.home {
     min-height: 100vh;
     padding-top: 6rem;
 

@@ -1,6 +1,8 @@
 {
     "nextmind": {
         "title": "NEXTMIND",
+        "image": "nextmind.jpeg",
+        "link": "https://github.com/Next-Mind",
         "techs": [
             "flutter",
             "firebase",
@@ -9,25 +11,43 @@
             "mysql",
             "react"
         ],
-        "content": [
-            "O <strong>NextMind</strong> é um projeto multiplataforma (Web, Mobile e Desktop) desenvolvido como Projeto Integrador no COTIL.",
-            "A ideia surgiu após a pandemia, ao identificar a deficiência das instituições de ensino em relação à saúde mental dos alunos.",
-            "O sistema oferece um ambiente de acolhimento, escuta e apoio, utilizando tecnologias modernas para garantir escalabilidade.",
-            "<span class=\"highlight\">🏆 Projeto vencedor da IV FECITEC — Feira de Tecnologia do COTIL.</span>"
-        ]
+        "content": {
+            "PT": [
+                "O <strong>NextMind</strong> é um projeto multiplataforma (Web, Mobile e Desktop) desenvolvido como Projeto Integrador no COTIL.",
+                "A ideia surgiu após a pandemia, ao identificar a deficiência das instituições de ensino em relação à saúde mental dos alunos.",
+                "O sistema oferece um ambiente de acolhimento, escuta e apoio, utilizando tecnologias modernas para garantir escalabilidade.",
+                "<span class=\"highlight\">🏆 Projeto vencedor da IV FECITEC — Feira de Tecnologia do COTIL.</span>"
+            ],
+            "EN": [
+                "The <strong>NextMind</strong> is a multiplatform project (Web, Mobile, and Desktop) developed as an integrative project at COTIL.",
+                "The idea emerged after the pandemic, identifying the lack of mental health support in educational institutions.",
+                "The system provides a welcoming and supportive environment, using modern technologies to ensure scalability.",
+                "<span class=\"highlight\">🏆 Award-winning project at the IV FECITEC — COTIL Technology Fair.</span>"
+            ]
+        }
     },
     "housecoffee": {
         "title": "House Coffee",
+        "image": "house-coffee.jpeg",
+        "link": "https://github.com/marlon1402/House_Coffee",
         "techs": [
             "html5",
             "css3",
             "javascript"
         ],
-        "content": [
-            "O <strong>House Coffee</strong> é um projeto front-end desenvolvido com foco exclusivo em design e experiência do usuário.",
-            "A proposta foi criar a identidade visual de uma cafeteria fictícia, explorando cores, tipografia e organização de layout.",
-            "Todo o projeto foi construído utilizando <strong>HTML</strong>, <strong>CSS</strong> e <strong>JavaScript</strong>, sem qualquer integração com backend.",
-            "O objetivo principal foi aprimorar habilidades de desenvolvimento front-end, responsividade e atenção aos detalhes visuais."
-        ]
+        "content": {
+            "PT": [
+                "O <strong>House Coffee</strong> é um projeto front-end desenvolvido com foco exclusivo em design e experiência do usuário.",
+                "A proposta foi criar a identidade visual de uma cafeteria fictícia, explorando cores, tipografia e organização de layout.",
+                "Todo o projeto foi construído utilizando <strong>HTML</strong>, <strong>CSS</strong> e <strong>JavaScript</strong>, sem qualquer integração com backend.",
+                "O objetivo principal foi aprimorar habilidades de desenvolvimento front-end, responsividade e atenção aos detalhes visuais."
+            ],
+            "EN": [
+                "The <strong>House Coffee</strong> is a front-end project focused on design and user experience.",
+                "The goal was to create the visual identity of a fictional coffee shop, exploring colors, typography, and layout organization.",
+                "The entire project was built using <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>, without any backend integration.",
+                "The main objective was to improve front-end skills, responsiveness, and attention to visual details."
+            ]
+        }
     }
 }
