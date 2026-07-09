@@ -2,6 +2,17 @@ const container = document.getElementById("projectsList");
 
 let projectsData = {};
 
+const BTN_MORE_LABELS = { PT: "Saiba mais", EN: "Learn more", ES: "Saber más" };
+const BTN_VIEW_PROJECT_LABELS = { PT: "Ver projeto", EN: "View project", ES: "Ver proyecto" };
+
+function btnMoreLabel(lang) {
+    return BTN_MORE_LABELS[lang] || BTN_MORE_LABELS.PT;
+}
+
+function btnViewProjectLabel(lang) {
+    return BTN_VIEW_PROJECT_LABELS[lang] || BTN_VIEW_PROJECT_LABELS.PT;
+}
+
 // 🔹 LOAD JSON
 async function loadProjects() {
     try {
@@ -44,12 +55,12 @@ function renderProjects() {
 
                 <div class="project-actions">
                     <button class="project-button outline" data-project="${key}">
-                        ${lang === "PT" ? "Saiba mais" : "Learn more"}
+                        ${btnMoreLabel(lang)}
                     </button>
 
                     <a href="#"
                        class="project-button primary">
-                        ${lang === "PT" ? "Ver projeto" : "View project"}
+                        ${btnViewProjectLabel(lang)}
                     </a>
                 </div>
             </div>

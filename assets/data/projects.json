@@ -23,6 +23,12 @@
                 "The idea emerged after the pandemic, identifying the lack of mental health support in educational institutions.",
                 "The system provides a welcoming and supportive environment, using modern technologies to ensure scalability.",
                 "<span class=\"highlight\">🏆 Award-winning project at the IV FECITEC — COTIL Technology Fair.</span>"
+            ],
+            "ES": [
+                "<strong>NextMind</strong> es un proyecto multiplataforma (Web, Móvil y Escritorio) desarrollado como Proyecto Integrador en el COTIL.",
+                "La idea surgió tras la pandemia, al identificar la falta de apoyo a la salud mental en las instituciones educativas.",
+                "El sistema ofrece un entorno de acogida, escucha y apoyo, utilizando tecnologías modernas para garantizar la escalabilidad.",
+                "<span class=\"highlight\">🏆 Proyecto ganador de la IV FECITEC — Feria de Tecnología del COTIL.</span>"
             ]
         }
     },
@@ -47,6 +53,12 @@
                 "The goal was to create the visual identity of a fictional coffee shop, exploring colors, typography, and layout organization.",
                 "The entire project was built using <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>, without any backend integration.",
                 "The main objective was to improve front-end skills, responsiveness, and attention to visual details."
+            ],
+            "ES": [
+                "<strong>House Coffee</strong> es un proyecto front-end desarrollado con un enfoque exclusivo en el diseño y la experiencia de usuario.",
+                "La propuesta fue crear la identidad visual de una cafetería ficticia, explorando colores, tipografía y organización del layout.",
+                "Todo el proyecto fue construido utilizando <strong>HTML</strong>, <strong>CSS</strong> y <strong>JavaScript</strong>, sin ninguna integración con backend.",
+                "El objetivo principal fue mejorar las habilidades de desarrollo front-end, la responsividad y la atención a los detalles visuales."
             ]
         }
     }
